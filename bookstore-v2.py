@@ -1,14 +1,20 @@
+"""Storing books - Arisa Mori """
+
+#Bookstore - store books
+#Arisa Mori
+#set function for displaying list
+def display():
+    """displaying books in the list"""
+    length = len(books)
+    for n in range(0,length):
+        print(n+1, books[n][0],"-",books[n][1],"-$",books[n][2])
+        
 #set list for books
 books = [["Harry Potter", "J.K.Rowling", 16], ["Romeo and Juliet", "William Shakespeare", 20], ["The old man and the sea", "Ernest Hemingway", 13]]
 
 #set ask to true to keep conitnue
 ask = True
 
-#set function for displaying list
-def display():
-    length = len(books)
-    for n in range(0,length):
-        print(n+1, books[n][0],"-",books[n][1],"-$",books[n][2])
         
 #display list
 display()
@@ -27,6 +33,8 @@ while ask == True:
     
     print("")
     print("")
+    
+    #while loop for make sure user enter an option from menu
     while option ==True:
         
         #ask for an option
@@ -34,7 +42,7 @@ while ask == True:
         print("")
         print("")
     
-    
+        #if statements for selecting option
         if action == "1":
         
             #ask users for inputs
@@ -44,6 +52,7 @@ while ask == True:
             print("")
             
             integer = True
+            #while loop for make sure user enter an integer
             while integer == True:
                 try:
                     price = int(input("Enter a price of book that you want to add: "))
@@ -59,8 +68,11 @@ while ask == True:
             
             option = False
         
+        
         elif action == "2":
             integer = True
+            
+            #while loop to make sure user enter an integer
             while integer == True:
                 try:
                     
@@ -81,6 +93,8 @@ while ask == True:
         
         elif action == "3":
             integer = True
+            
+            #while loop to make sure user enter an integer
             while integer == True:
                 try:
                     
@@ -93,13 +107,18 @@ while ask == True:
                     print("")
                     print("Enter a number betwee 1-3")
                     print("")
-                    
+            
+            #ask user for name of book
             name = input("Enter a name of book that you want to change to: ")
             print("")
+            
+            #ask user for name of author
             author = input("Enter a author of book that you wnat to change to: ")
             print("")
             
             integer = True
+            
+            #while loop to make sure user enter an integer
             while integer == True:
                 try:
                     
@@ -118,6 +137,10 @@ while ask == True:
             
         else:
             print("Please enter a number between 1 and 3")
+            
+            print("")
+            print("")
+            display()
             
         print("")
     

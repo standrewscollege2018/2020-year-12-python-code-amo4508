@@ -1,15 +1,20 @@
-#list for departure location
-departure = ["Auckland", "Wellington", "Christchurch"]
-
-#list for destination location
-destinations = ["Sydney", "Tonga", "Shanghai", "London"]
+"""calculates the cost of trip"""
 
 #set function for display lists
+
 def display(a):
+    """display the lists"""
     length = len(a)
     for n in range (0,length):
         print(n+1, a[n])
         
+#list for departure location
+departure = ["Auckland", "Wellington", "Christchurch"]
+        
+#list for destination location
+destinations = ["Sydney", "Tonga", "Shanghai", "London"]
+
+
           
 #set flight cost to 0
 flight_cost = 0
@@ -138,50 +143,50 @@ while ask == True:
                 
             menu = False
         
-        #discount the accomodation cost if user is staying for 3 or more nights
-        if stay >= 3:
-            accomodation_cost = accomodation_cost * 0.8
-            discount = True
+    #discount the accomodation cost if user is staying for 3 or more nights
+    if stay >= 3:
+        accomodation_cost = accomodation_cost * 0.8
+        discount = True
+            
+    else:
+        discount = False
+        
+    #print flight cost
+    print("flight cost is $", flight_cost)
+    print("")
+        
+        
+    if discount == True:
+        print("accomodation cost will be 80% because you stayed 3 or more nights")
+            
+    #print accomodation cost
+    print("accomodation cost is $", accomodation_cost)
+    print("")
+    print("")
+        
+    #print total cost
+    print("total cost is $", flight_cost + accomodation_cost)
+    print("")
+    print("")
+        
+    ask2 = True
+    #while loop to make sure user answer in yes or no
+    while ask2 == True:
+        #ask user to confirm
+        confirm = input("Do you want to confirm this cost? (answer in yes or no): ")
+        if confirm == "yes":
+            ask = False
+            ask2 = False
+                
+        elif confirm == "no":
+            ask2 = False
+            print("")
+            print("")
             
         else:
-            discount = False
-        
-        #print flight cost
-        print("flight cost is $", flight_cost)
-        print("")
-        
-        
-        if discount == True:
-            print("accomodation cost will be 80% because you stayed 3 or more nights")
+            print("")
+            print("answer in yes or no")
+            print("")
             
-        #print accomodation cost
-        print("accomodation cost is $", accomodation_cost)
-        print("")
-        print("")
-        
-        #print total cost
-        print("total cost is $", flight_cost + accomodation_cost)
-        print("")
-        print("")
-        
-        ask2 = True
-        #while loop to make sure user answer in yes or no
-        while ask == True:
-            #ask user to confirm
-            confirm = input("Do you want to confirm this cost? (answer in yes or no): ")
-            if confirm == "yes":
-                ask = False
-                ask2 = False
-                
-            elif confirm == "no":
-                ask2 = False
-                print("")
-                print("")
-            
-            else:
-                print("")
-                print("answer in yes or no")
-                print("")
-                continue
                       
     

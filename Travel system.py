@@ -124,7 +124,7 @@ while ask == True:
             print("")
             print("")
             
-        if stay == 0:
+        if stay <= 0:
             print("You should be staying at least one night")
         
         #add accomodation cost to accomodation cost
